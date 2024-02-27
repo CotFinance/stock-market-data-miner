@@ -10,7 +10,6 @@ def login_user(request):
         return render(request, "login_user.html", {"login_template": login})
 
     users = Usuario.objects.all()
-    # login.clean()
 
     email = login.data.get('email')
     senha = login.data.get('senha')
@@ -19,7 +18,6 @@ def login_user(request):
         if user.email == email and user.senha == senha:
              return redirect('index')
 
-    # print(email)
     login.add_error('email', 'Email ou senha inválida')
     return render(request, "login_user.html", {"login_template": login})
 
@@ -28,7 +26,7 @@ def create(request):
 
     if login.is_valid():
         login.save()
-        return redirect('login_user') #TODO: esse index redireciona para onde? para o path com name="index" na url?
+        return redirect('login_user')
     else:
         return render(request, "create.html", {"login_template": login})
     
