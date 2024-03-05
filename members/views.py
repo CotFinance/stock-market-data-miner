@@ -30,11 +30,12 @@ def create(request):
     else:
         return render(request, "create.html", {"login_template": login})
     
-
 def history(request):
     ativos = Ativo.objects.all()
     return render(request, 'history.html', {'ativos': ativos})
-                                    
-
+                                                                  
 def configuration(request):
     return render(request, 'configuration.html')
+
+def logout(request):
+    return render('login_user.html')
