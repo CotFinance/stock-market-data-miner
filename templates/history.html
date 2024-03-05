@@ -4,6 +4,8 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Lista de Ativos</title>
+    {% load static %}
+    <script src="{% static 'dark-mode.js' %}"></script>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
     <style>
         body {
@@ -63,7 +65,7 @@
             background-color: #34495e;
         }
 
-        #content {
+        #content_history {
             margin-left: 240px; /* Adjusted to accommodate the menu */
             max-width: 600px;
             margin-top: 50px;
@@ -114,15 +116,15 @@
 <body>
 
 <div id="menu">
-    <h2>Lista de Ativos</h2>
+    <h2 id="title">Lista de Ativos</h2>
     <ul>
         <li><a href="{% url 'index' %}"><i class="fas fa-search"></i> Filtro </a></li>
         <li><a href="{% url 'history' %}"><i class="fas fa-history"></i> Histórico</a></li>
-        <li><a href="#"><i class="fas fa-cogs"></i>  Configurações</a></li>
+        <li><a href="{% url 'configuration' %}"><i class="fas fa-cogs"></i>  Configurações</a></li>
     </ul>
 </div>
 
-<div id="content">
+<div id="content_history">
     <h1>Lista de Ativos</h1>
     <ul>
         {% for ativo in ativos %}

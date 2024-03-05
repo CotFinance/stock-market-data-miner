@@ -4,7 +4,8 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Back-teste B3 - Timeframe Diário</title>
-    <!-- Adicione o link para a biblioteca FontAwesome -->
+    {% load static %}
+    <script src="{% static 'dark-mode.js' %}"></script>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
     <style>
         body {
@@ -125,7 +126,7 @@
 <body>
 
 <div id="menu">
-    <h2>CotFinance</h2>
+    <h2 id="title">CotFinance</h2>
     <ul>
         <li><a href="#"><i class="fas fa-search"></i> Filtro </a></li>
         <li><a href="{% url 'history' %}"><i class="fas fa-history"></i> Histórico</a></li>
